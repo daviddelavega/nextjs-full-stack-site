@@ -53,7 +53,7 @@ export async function POST(
 ) {
   const { db } = await connectToDb();
 
-  const userId = params.id;
+  const userId = await params.id;
   const body: CartBody = await request.json();
   const productId = body.productId;
 
@@ -84,7 +84,7 @@ export async function DELETE(
 ) {
   const { db } = await connectToDb();
 
-  const userId = params.id;
+  const userId = await params.id;
   const body: CartBody = await request.json();
   const productId = body.productId;
 
