@@ -19,7 +19,7 @@ export async function GET(
 ) {
   const { db } = await connectToDb();
 
-  const userId = params.id;
+  const userId = await params.id;
   const userCart = await db.collection("carts").findOne({ userId });
 
   if (!userCart) {
